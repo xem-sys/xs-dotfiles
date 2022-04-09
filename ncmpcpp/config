@@ -1,10 +1,10 @@
 ### Directories ###
 ncmpcpp_directory = ~/.config/ncmpcpp
 lyrics_directory = ~/.config/ncmpcpp/lyrics
-mpd_music_dir = /media/glacier/Music/
+mpd_music_dir = /media/Music/
 mpd_host = "/run/user/1000/mpd/socket"
 #mpd_host = "localhost"
-#mpd_host = "10.0.0.99"
+#mpd_host = "127.0.0.1"
 #mpd_port = "6600"
 mpd_crossfade_time 	= "3"
 system_encoding = "UTF-8"
@@ -95,7 +95,7 @@ progressbar_look = "─⊙"
 #progressbar_look = "--❱"
 
 ### Visualizer ###
-visualizer_data_source = /media/glacier/mpd/mpd.fifo
+visualizer_data_source = /media/mpd/mpd.fifo
 visualizer_output_name = "my_fifo"
 visualizer_in_stereo   = "yes"
 visualizer_autoscale = yes
