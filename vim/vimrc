@@ -1,0 +1,186 @@
+"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+"
+"               ██╗   ██╗██╗███╗   ███╗██████╗  ██████╗
+"               ██║   ██║██║████╗ ████║██╔══██╗██╔════╝
+"               ██║   ██║██║██╔████╔██║██████╔╝██║
+"               ╚██╗ ██╔╝██║██║╚██╔╝██║██╔══██╗██║
+"                ╚████╔╝ ██║██║ ╚═╝ ██║██║  ██║╚██████╗
+"                 ╚═══╝  ╚═╝╚═╝     ╚═╝╚═╝  ╚═╝ ╚═════╝
+"
+"               A vanilla vimrc that requires no plugins
+"
+" Sections:
+"    -> General
+"    -> Spacing
+"    -> Interface
+"    -> Status line
+"    -> Advanced
+"    -> Backup
+
+"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+" => General
+"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+
+"Show line numbers
+set number
+
+"Break lines at word (requires Wrap lines)
+set linebreak
+
+"Linebreak on 500 characters
+set tw=500
+
+"Wrap-broken line prefix
+set showbreak=+++
+
+"Line wrap (number of cols)
+set textwidth=80
+
+"Highlight matching brace
+set showmatch
+
+"How many tenths of a second to blink when matching brackets
+set mat=2
+
+"Use visual bell (no beeping)
+set visualbell
+set noerrorbells 
+
+"Highlight all search results
+set hlsearch
+
+"Enable smart-case search
+set smartcase
+
+"Always case-insensitive
+set ignorecase
+
+"Searches for strings incrementally
+set incsearch
+  
+"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+" => Spacing
+"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+
+"Auto-indent new lines
+set autoindent
+
+"Number of auto-indent spaces
+set shiftwidth=4
+
+"Enable smart-indent
+set smartindent
+
+"Enable smart-tabs
+set smarttab
+
+"Number of spaces per Tab
+set softtabstop=4
+
+"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+" => Interface
+"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+
+" Set 5 lines to the cursor - when moving vertically using j/k
+set so=5
+
+" Configure backspace so it acts as it should act
+set backspace=eol,start,indent
+set whichwrap+=<,>,h,l
+
+" Highlight cursor line underneath the cursor horizontally.
+set cursorline
+
+" Highlight cursor line underneath the cursor vertically.
+"set cursorcolumn
+
+" For regular expressions turn magic on
+set magic
+
+" Add a bit extra margin to the left
+set foldcolumn=1
+
+" Enabling filetype support provides filetype-specific indenting,
+" syntax highlighting, omni-completion and other useful settings.
+filetype plugin indent on
+syntax enable
+
+""""""""""""""""""""""""""""""
+" => Status line
+""""""""""""""""""""""""""""""
+
+" Clear status line when vimrc is reloaded.
+set statusline=
+
+" Status line left side.
+set statusline+=\ %F\ %M\ %Y\ %R
+
+" Use a divider to separate the left side from the right side.
+set statusline+=%=
+
+" Status line right side.
+"set statusline+=\ ascii:\ %b\ hex:\ 0x%B\ row:\ %l\ col:\ %c\ percent:\ %p%%
+
+" Show the status on the second to last line.
+set laststatus=2
+
+"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+" => Advanced
+"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+
+" Great command-line completion, use `<Tab>` to move
+" around and `<CR>` to validate.
+set wildmenu 
+
+" `matchit.vim` is built-in so let's enable it!
+" Hit `%` on `if` to jump to `else`.
+runtime macros/matchit.vim
+
+" Prompt confirmation dialogs
+set confirm
+
+" Show row and column ruler info
+set ruler
+ 
+" Change working directory to open buffer
+set autochdir
+ 
+" Number of undo levels
+set undolevels=1000
+
+" Set to auto read when a file is changed from the outside
+set autoread
+au FocusGained,BufEnter * checktime
+
+" Set utf8 as standard encoding and en_US as the standard language
+set encoding=utf8
+
+" Use Unix as the standard file type
+set ffs=unix,dos,mac
+
+if has("autocmd")
+    autocmd BufWritePre *.txt,*.js,*.py,*.wiki,*.sh,*.coffee :call CleanExtraSpaces()
+endif
+
+"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+" => Backup
+"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+
+"Turn on backup option
+set backup
+
+" Create backupdir
+silent !mkdir -p ~/.vim/backup > /dev/null 2>&1
+
+" Where the backups are stored.
+set backupdir=~/.vim/backup
+
+"not generate .swap
+set noswapfile
+
+"Make backup before overwriting the current buffer
+set writebackup
+
+"Overwrite the original backup file
+set backupcopy=yes
+

@@ -1,0 +1,120 @@
+### Directories ###
+ncmpcpp_directory = ~/.config/ncmpcpp
+lyrics_directory = ~/.config/ncmpcpp/lyrics
+mpd_music_dir = /media/glacier/Music/
+mpd_host = "/run/user/1000/mpd/socket"
+#mpd_host = "localhost"
+#mpd_host = "10.0.0.99"
+#mpd_port = "6600"
+mpd_crossfade_time 	= "3"
+system_encoding = "UTF-8"
+regular_expressions = "extended"
+
+# startup_screen
+startup_screen = playlist
+#startup_slave_screen = visualizer
+#startup_slave_screen_focus = no
+#locked_screen_width_part = 41
+
+### Colors ###
+colors_enabled = "yes"
+empty_tag_color = "white"
+main_window_color = "cyan"
+current_item_prefix = "$(green)$r"
+current_item_suffix = "$/r$(end)"
+statusbar_color = "white"
+state_line_color = "white"
+state_flags_color = "green"
+header_window_color = "white"
+color1 = "white"
+color2 = "black"
+volume_color = "white"
+
+# interface
+#user_interface="alternative"
+user_interface="classic"
+
+# alt interface
+alternative_ui_separator_color = "white"
+alternative_header_first_line_format = $b$1$aqqu$/a$9 {%t}|{%f} $1$atqq$/a$9$/b
+alternative_header_second_line_format = {{$4$b%a$/b$9}{ - $7%b$9}{ ($4%y$9)}}|{%D}
+#alternative_header_first_line_format ="{$3%a} - {%t}"
+#alternative_header_second_line_format =""
+
+#### Browser
+browser_sort_mode = name
+browser_sort_format = {%a - }{%t}|{%f} {%l}
+browser_display_mode = classic
+browser_playlist_prefix = "$2 ♥ $0 "
+
+### Song list ###
+song_list_format = {$4%a - }{%t}|{$8%f$9}$R{$3(%l)$9}
+song_status_format = $b{{$8"%t"}} $3by {$4%a{ $3in $7%b{ (%y)}} $3}|{$8%f}
+song_library_format = {%n - }{%t}|{%f}
+song_columns_list_format = (20)[]{a} (6f)[green]{NE} (50)[white]{t|f:Title} (20)[cyan]{b} (7f)[white]{l}
+song_window_title_format = "{%a - }{%t}|{%f}"
+
+# Playlist ..
+playlist_separate_albums = "no"
+playlist_display_mode = "columns" 
+#(classic/columns)
+
+# Misc ..   
+statusbar_visibility = yes
+header_visibility = yes
+titles_visibility = yes
+display_bitrate = "yes"
+autocenter_mode = "yes"
+centered_cursor = "yes"
+mouse_support = "yes"
+# mouse_list_scroll_whole_page = "yes"
+lines_scrolled = "1"
+display_remaining_time = "no"
+ask_before_clearing_playlists = "yes"
+discard_colors_if_item_is_selected = "yes"
+display_volume_level = yes
+empty_tag_marker="Unknown" 
+ignore_leading_the = "yes"
+allow_for_physical_item_deletion = "no"
+
+# Delays .. 
+playlist_disable_highlight_delay = 2
+message_delay_time= "1"
+
+# Progress Bar ..
+progressbar_elapsed_color = "cyan"
+progressbar_color = "white"
+#progressbar_look = "━━─"
+#progressbar_look = "▄▄▄"
+#progressbar_look = "▂▂▂"
+#progressbar_look = "=>"
+#progressbar_look ="=|>"
+#progressbar_look = "─╼"
+#progressbar_look = "--⊙"
+progressbar_look = "─⊙"
+#progressbar_look = "--❱"
+
+### Visualizer ###
+visualizer_data_source = /media/glacier/mpd/mpd.fifo
+visualizer_output_name = "my_fifo"
+visualizer_in_stereo   = "yes"
+visualizer_autoscale = yes
+visualizer_look = "⊙⊙"
+#visualizer_look = "|○"
+#visualizer_look = "▋▋"
+#visualizer_look = "±|"
+#visualizer_look = "+|"
+#visualizer_look = "◆│"
+#visualizer_look = "◆▋"
+#visualizer_look = "●▮"
+#visualizer_look   = ●●
+visualizer_type   = "ellipse"
+#visualizer_type = "wave" (spectrum/ellipse/wave_filled)
+#visualizer_spectrum_smooth_look = no
+#visualizer_fps = 60
+visualizer_color = blue, cyan, white, green
+# Alternative subset of 256 colors for terminals that support it.
+# visualizer_color = 47, 83, 119, 155, 191, 227, 221, 215, 209, 203, 197, 161
+#visualizer_color = 7, 110, 218, 179
+#visualizer_color = 15, 12, 8, 237, 79
+#visualizer_color = 46,45,44,43,42,41,40,39,38,37,36,35

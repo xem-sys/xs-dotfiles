@@ -1,0 +1,114 @@
+## Modified by dev@xemsys.xyz
+## Everyone is permitted to copy and distribute copies of this file under GNU-GPL3
+
+## Used on ArchLabs Linux with Alsa (pulse installed too)
+## As a local user socket. See mpd.conf
+## systemctl --user enable mpd.socket
+## systemctl --user start mpd.socket
+
+### Directories ###
+ncmpcpp_directory = ~/.config/ncmpcpp
+lyrics_directory = ~/.config/ncmpcpp/lyrics
+mpd_music_dir = /media/qbox/Music/
+mpd_host = "/run/user/1000/mpd/socket"
+#mpd_host = "localhost"
+#mpd_host = "10.0.0.99"
+#mpd_port = "6600"
+mpd_crossfade_time 	= "3"
+system_encoding = "UTF-8"
+regular_expressions = "extended"
+
+### Behaviour ###
+message_delay_time = 1
+autocenter_mode = "yes"
+centered_cursor = "yes"
+ignore_leading_the = "yes"
+playlist_disable_highlight_delay = 2
+allow_for_physical_item_deletion = "no"
+
+### Appearance ###
+playlist_display_mode = columns
+browser_display_mode = classic
+colors_enabled	 = yes
+user_interface = classic
+#user_interface = alternative
+
+### Layout ###
+startup_screen = playlist
+#startup_slave_screen = visualizer
+#startup_slave_screen_focus = no
+#locked_screen_width_part = 41
+
+### Visualizer ###
+visualizer_data_source = /media/qbox/mpd/mpd.fifo
+visualizer_output_name = "my_fifo"
+visualizer_in_stereo   = "yes"
+visualizer_autoscale = yes
+visualizer_sync_interval = "30"
+#visualizer_look = "⊙⊙"
+visualizer_look = "|○"
+#visualizer_look = "▋▋"
+#visualizer_look = "±|"
+#visualizer_look = "+|"
+#visualizer_look = "◆│"
+#visualizer_look = "●▮"
+#visualizer_look   = ●●
+visualizer_type   = "ellipse"
+#visualizer_type = "wave" (spectrum/ellipse/wave_filled)
+#visualizer_spectrum_smooth_look = no
+#visualizer_fps = 60
+#visualizer_color = blue, cyan, white, magenta
+## Alternative subset of 256 colors for terminals that support it.
+# visualizer_color = 47, 83, 119, 155, 191, 227, 221, 215, 209, 203, 197, 161
+#visualizer_color = 7, 110, 218, 179
+#visualizer_color = 15, 12, 8, 237, 79
+visualizer_color = 46,45,44,43,42,41,40,39,38,37,36,35
+
+# Now Playing ..
+now_playing_prefix = "$2▶▶▶"
+now_playing_suffix = "$8$/b"
+
+### Colors ###
+main_window_color = "cyan"
+current_item_prefix = "$(green)$r"
+current_item_suffix = "$/r$(end)"
+statusbar_color = "white"
+state_line_color = "white"
+state_flags_color = "green"
+header_window_color = "white"
+color1 = "white"
+color2 = "black"
+progressbar_color = "green"
+progressbar_elapsed_color = "cyan"
+volume_color = "white"
+
+### Window ###
+song_window_title_format = "{%a - }{%t}|{%f}"
+statusbar_visibility = yes
+header_visibility = yes
+titles_visibility = yes
+
+### Progress bar ###
+#progressbar_look = "▂▂▂"
+#progressbar_look = "=>"
+#progressbar_look ="=|>"
+#progressbar_look = "▃▃▃"
+#progressbar_look = "─╼·"
+progressbar_look = "─⊙"
+#progressbar_look = "--❱"
+#progressbar_look = "━━─"
+
+### Alternative UI ###
+alternative_ui_separator_color = "white"
+alternative_header_first_line_format = $b$1$aqqu$/a$9 {%t}|{%f} $1$atqq$/a$9$/b
+alternative_header_second_line_format = {{$4$b%a$/b$9}{ - $7%b$9}{ ($4%y$9)}}|{%D}
+
+### Song list ###
+song_list_format = {$4%a - }{%t}|{$8%f$9}$R{$3(%l)$9}
+song_status_format = $b{{$8"%t"}} $3by {$4%a{ $3in $7%b{ (%y)}} $3}|{$8%f}
+song_library_format = {%n - }{%t}|{%f}
+song_columns_list_format = (20)[]{a} (6f)[green]{NE} (50)[white]{t|f:Title} (20)[cyan]{b} (7f)[white]{l}
+
+#### Browser
+browser_sort_mode = name
+browser_sort_format = {%a - }{%t}|{%f} {%l}
